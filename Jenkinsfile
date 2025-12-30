@@ -1,5 +1,10 @@
 pipeline{
-    agent any
+    agent {
+        docker{
+            image:'node:18-alpine'
+            reuseNode true
+        }
+    }
     
         stages{
             stage('Checkout')
@@ -11,7 +16,12 @@ pipeline{
             stage('Build')
         {
             steps{
-               sh 'echo "Biulding happnes"'
+               sh '''
+               npm --version
+               node --version
+               npm install ||true
+               echo "Biulding happnes"
+               '''
             }
         }
         stage('Test')
