@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    
+    {
         stages{
             stage('Checkout')
             {
@@ -11,7 +11,7 @@ pipeline{
             stage('Build')
         {
             steps{
-               sh 'Echo "Biulding happnes"'
+               sh 'echo "Biulding happnes"'
             }
         }
         stage('Test')
@@ -22,4 +22,5 @@ pipeline{
         }
 
     }
+}
 }
