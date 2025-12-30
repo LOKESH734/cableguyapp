@@ -18,6 +18,7 @@ pipeline{
         {
             steps{
                 sh 'echo "Testing"'  
+                sh 'exit 1'
             }
         }
 
